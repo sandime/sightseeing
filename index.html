@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html ng-app="tripApp">
+<head>
+    <title>Egg Flower</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.js"></script>
+    <script src="sights.js"></script>
+
+</head>
+<body>
+<div id="todoPanel" class="panel" ng-controller="defaultCtrl">
+
+    <h3 class="panel-header">
+        Sights to see, places to go
+            <span class="label label-info">
+                {{ (todos | filter: {complete: 'false'}).length}}
+            </span>
+    </h3>
+
+    <div class="row">
+        <div class="col-xs-6">
+            <div class="well">
+                <div class="form-group row">
+                    <label for="actionText">Sight:</label>
+                    <input id="actionText" class="form-control"
+                           ng-model="newTodo.action">
+                </div>
+                <div class="form-group row">
+                    <label for="actionLocation">Address, city:</label>
+                    <input id="actionLocation" class="form-control"
+                            ng-model="newTodo.location">
+                     <!--   <option>Home</option>
+                        <option>Office</option>
+                        <option>Mall</option> -->
+
+                </div>
+                <button class="btn btn-primary btn-block"
+                        ng-click="addNewItem(newTodo)">
+                    Add
+                </button>
+
+            </div>
+        </div>
+
+        <div class="col-xs-6">
+            <table class="table">
+                <thead>
+                <tr><th></th><th>Sight</th><th>Seen</th></tr>
+                </thead>
+                <tr ng-repeat="item in todos">
+                    <td>{{$index + 1}}</td>
+                    <td>{{item.action}}</td>
+
+                    <td>
+                        <input type="checkbox" ng-model="item.complete">
+                    </td>
+                    <td>
+                       <!--button -->
+                        <button class="btn btn-default-sm"
+                                ng-click="removeNewItem()">remove
+                        </button>
+
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+<div>Select a map</div>
+
+<!--these links work perfectly in this order -->
+<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+</body>
+</html>
+
+
+
