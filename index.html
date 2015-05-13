@@ -10,7 +10,7 @@
 
 </head>
 <body>
-<div id="todoPanel" class="panel" ng-controller="defaultCtrl">
+<div id="todoPanel" class="panel" ng-controller="sightCtrl">
 
     <h3 class="panel-header">
         Sights to see, places to go
@@ -23,17 +23,20 @@
         <div class="col-xs-6">
             <div class="well">
                 <div class="form-group row">
-                    <label for="actionText">Sight:</label>
-                    <input id="actionText" class="form-control"
-                           ng-model="newTodo.action">
+                    <label for="sight">Sight:</label>
+                    <input id="sight" class="form-control"
+                           ng-model="newTodo.sight">
                 </div>
                 <div class="form-group row">
-                    <label for="actionLocation">Address, city:</label>
-                    <input id="actionLocation" class="form-control"
-                            ng-model="newTodo.location">
-                     <!--   <option>Home</option>
-                        <option>Office</option>
-                        <option>Mall</option> -->
+                    <label for="address"> Address: </label>
+                    <input id="address" class="form-control"
+                            ng-model="newTodo.address">
+
+                </div>
+                <div class="form-group row">
+                    <label for="city">City:</label>
+                    <input id="city" class="form-control"
+                           ng-model="newTodo.city">
 
                 </div>
                 <button class="btn btn-primary btn-block"
@@ -51,7 +54,7 @@
                 </thead>
                 <tr ng-repeat="item in todos">
                     <td>{{$index + 1}}</td>
-                    <td>{{item.action}}</td>
+                    <td>{{item.sight}}</td>
 
                     <td>
                         <input type="checkbox" ng-model="item.complete">

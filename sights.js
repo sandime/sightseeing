@@ -3,7 +3,7 @@
  */
 
 angular.module("tripApp", [])
-    .controller("defaultCtrl", function ($scope) {
+    .controller("sightCtrl", function ($scope) {
         $scope.todos = [];
 
        /* $scope.todos = [
@@ -15,7 +15,7 @@ angular.module("tripApp", [])
 */
         $scope.addNewItem = function (newItem) {
             $scope.todos.push({
-                action: newItem.action + " (" + newItem.location + ")",
+                sight: newItem.sight + " (" + newItem.address + newItem.city+ ")",
                 complete: false
             });
             //remove
