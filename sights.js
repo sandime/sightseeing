@@ -26,8 +26,11 @@ angular.module("tripApp", [])
                 $scope.todos.splice(index,1);
             };
             //end
+        };
+       /* for (i = 0; i < $scope.todos.length; i++){
+            var mapCity = newItem.city[i];
         }
-
+        */
     });
 
 //push city into a new array to create a map selection dropdown menu
