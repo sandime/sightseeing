@@ -15,9 +15,11 @@ angular.module("tripApp", [])
 */
         $scope.addNewItem = function (newItem) {
             $scope.todos.push({
-                sight: newItem.sight + " (" + newItem.address + newItem.city+ ")",
+                sight: newItem.sight + " (" + newItem.address + ", " + newItem.city+ ")",
                 complete: false
+
             });
+
             //remove
             $scope.removeNewItem = function (x){
                 var index = $scope.todos.indexOf(x);
@@ -28,7 +30,7 @@ angular.module("tripApp", [])
 
     });
 
-
+//push city into a new array to create a map selection dropdown menu
 
 /*
 var app = angular.module('TripApp', []);
